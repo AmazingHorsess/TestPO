@@ -12,4 +12,5 @@ WHERE (date_close IS NULL OR date_close > DATE('now'))
 AND date_open <= DATE('now')
 GROUP BY city
 HAVING warehouse_count > 80;
+```
 ![img_18.png](img_18.png)

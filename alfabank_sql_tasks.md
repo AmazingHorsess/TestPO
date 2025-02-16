@@ -5,15 +5,18 @@
 #### Сложность: средняя
 
 [#93](tests/93/93.md) `Тестовое задание Альфа банк` Какой средний возраст клиентов, купивших Smartwatch (использовать наименование товара product.name) в 2024 году?
+```sql
 SELECT AVG(c.age) AS avg_age
 FROM customers c
 JOIN purchases p ON c.customer_key = p.customer_key
 JOIN products pr ON p.product_key = pr.product_key
 WHERE pr.name = 'Smartwatch'
 AND strftime('%Y', p.date) = '2024';
+```
 ![img_16.png](img_16.png)
 
 [#94](tests/94/94.md) `Тестовое задание Альфа банк` Вывести имена покупателей, каждый из которых приобрёл Laptop и Monitor (использовать наименование товара product.name) в марте 2024 года?
+```sql
 SELECT c.name
 FROM customers c
 JOIN purchases p1 ON c.customer_key = p1.customer_key
@@ -26,5 +29,6 @@ AND strftime('%Y', p1.date) = '2024'
 AND strftime('%m', p1.date) = '03'
 AND strftime('%Y', p2.date) = '2024'
 AND strftime('%m', p2.date) = '03';
+```
 ![img_17.png](img_17.png)
 .
